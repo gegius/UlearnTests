@@ -1,0 +1,157 @@
+@font-face {
+  font-family: Hammerhead;
+  src: url(fonts/Hammerhead.ttf) format("truetype");
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  display: grid;
+  width: 100vw;
+  height: 100vh;
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: 5vh auto 5vh;
+}
+
+.header {
+  display: flex;
+  background: darkred;
+  justify-content: space-between;
+}
+
+.pages {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.page__space_marine {
+  text-align: center;
+  margin: 10%;
+  display: none;
+}
+
+.page__adeptus_mechanicus {
+  text-align: center;
+  margin: 10%;
+  display: none;
+}
+
+.page__imperial_guard {
+  text-align: center;
+  margin: 10%;
+  display: none;
+}
+
+.page__haos_adeptus {
+  text-align: center;
+  margin: 10%;
+  display: none;
+}
+
+.page__titan_legion {
+  text-align: center;
+  margin: 10%;
+  display: none;
+}
+
+.pages > * .info__title {
+  font-family: Hammerhead, fantasy;
+}
+
+.space_marine__image, .adeptus_mechanicus__image, .imperial_guard__image, .haos_adeptus__image, .titan_legion__image {
+  width: 400px;
+  float: right;
+  shape-outside: url("img/Adept.png");
+}
+
+.footer {
+  display: flex;
+  border-top: 1px solid gainsboro;
+  float: left;
+}
+
+
+.header__nav {
+  display: flex;
+  padding: 5px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header__nav > * {
+  padding: 10px;
+  border-right: 1px solid gainsboro;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+input[type="radio"] + label {
+  background: blue;
+  color: whitesmoke;
+  height: auto;
+  width: auto;
+  display: inline-block;
+  text-align: center;
+}
+
+input[type="radio"]:checked + label {
+  background: #888888;
+  height: auto;
+  width: auto;
+  display: inline-block;
+}
+
+
+.header__nav > *:hover, .header__nav > *:hover > .radio_container {
+  background: red;
+  color: whitesmoke;
+  box-shadow: 1px 5px 10px -5px black;
+  transition: all 0.3ms ease;
+  display: block;
+  float: left;
+}
+
+.header__nav > * > .radio_container {
+  margin-top: 10px;
+  position: absolute;
+  border: 1px solid black;
+  display: none;
+}
+
+.radio_container > label {
+  padding: 5px;
+  margin-left: 5px;
+  display: table-row;
+  font-size: 20px;
+}
+
+#content_page1:checked ~ .container .pages .page__space_marine {
+  display: block;
+}
+
+#content_page2:checked ~ .container .pages .page__adeptus_mechanicus {
+  display: block;
+}
+
+#content_page3:checked ~ .container .pages .page__imperial_guard {
+  display: block;
+}
+
+#content_page4:checked ~ .container .pages .page__haos_adeptus {
+  display: block;
+}
+
+#content_page5:checked ~ .container .pages .page__titan_legion {
+  display: block;
+}
+
+
+
+
